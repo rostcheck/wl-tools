@@ -119,6 +119,7 @@ with open(args.file) as fp:
                 month_stats[area] = 1
             if area not in headers:
                 headers.append(area)
+    stats.append(month_stats)
     with open('stats.csv', 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=headers, dialect='excel')
         writer.writeheader()
